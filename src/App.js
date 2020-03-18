@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
 	Header,
 	Container,
 	Form,
 	Input,
-	TextArea,
 	Button,
 	Image,
 	List,
-	Select,
-	Dimmer,
-	Loader,
 	Segment,
 } from 'semantic-ui-react';
 
