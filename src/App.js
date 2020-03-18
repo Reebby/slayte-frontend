@@ -127,7 +127,7 @@ function App() {
 	}
 
 	async function SubmitData() {
-		const response = await fetch(process.env.URI, {
+		const response = await fetch('http://68.183.59.209:8000/api/users', {
 			method: 'POST',
 			headers: { 'Content-type': 'application/json' },
 			body: JSON.stringify({
