@@ -122,7 +122,7 @@ function App() {
 	}
 
 	async function SubmitData() {
-		const response = await fetch('http://68.183.59.209:8000/api/users', {
+		const response = await fetch('https://vast-chamber-64570.herokuapp.com/', {
 			method: 'POST',
 			headers: { 'Content-type': 'application/json' },
 			body: JSON.stringify({
