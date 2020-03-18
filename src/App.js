@@ -47,7 +47,6 @@ function App() {
 			setErrorState('All fields are required');
 		} else {
 			if (!email.match(pattern)) {
-				//this.setState({ valid: false });
 				setErrorState('Invalid Email');
 			} else {
 				setErrorState('');
@@ -128,7 +127,7 @@ function App() {
 	}
 
 	async function SubmitData() {
-		const response = await fetch('http://localhost:8000/api/users', {
+		const response = await fetch(process.env.URI, {
 			method: 'POST',
 			headers: { 'Content-type': 'application/json' },
 			body: JSON.stringify({
@@ -150,13 +149,13 @@ function App() {
 	if (page1) {
 		return (
 			<Container text>
-			<Segment style={{margin: '50px'}}>
-				<Header style={{ marginTop: '30px' }} as="h2" paddngTop="3" textAlign="center">
-					Hi There.
-					<br />
-					<small style={{ color: 'red' }}>{errorstate}</small>
-				</Header>
-				
+				<Segment style={{ margin: '50px' }}>
+					<Header style={{ marginTop: '30px' }} as="h2" paddngTop="3" textAlign="center">
+						Hi There.
+						<br />
+						<small style={{ color: 'red' }}>{errorstate}</small>
+					</Header>
+
 					<Form>
 						<Form.Group widths="equal">
 							<Form.Field
@@ -213,16 +212,16 @@ function App() {
 	} else if (page2) {
 		return (
 			<Container text>
-<Segment style={{margin: '50px'}}>
-				<Header style={{ marginTop: '30px' }} as="h2" paddngTop="3" textAlign="center">
-					Hi {firstName}.
-				</Header>
-				<Header style={{ marginTop: '30px' }} as="h4" textAlign="center">
-					<p>What are your main goals with slayte?</p>
-					<br />
-					<p style={{ color: 'red' }}>{errorstate}</p>
-				</Header>
-				
+				<Segment style={{ margin: '50px' }}>
+					<Header style={{ marginTop: '30px' }} as="h2" paddngTop="3" textAlign="center">
+						Hi {firstName}.
+					</Header>
+					<Header style={{ marginTop: '30px' }} as="h4" textAlign="center">
+						<p>What are your main goals with slayte?</p>
+						<br />
+						<p style={{ color: 'red' }}>{errorstate}</p>
+					</Header>
+
 					<Form>
 						<Form.Group widths="equal">
 							<label>1</label>
@@ -274,16 +273,16 @@ function App() {
 	} else if (page3) {
 		return (
 			<Container text>
-			<Segment style={{margin: '50px'}}>
-				<Header style={{ marginTop: '30px' }} as="h2" paddngTop="3" textAlign="center">
-					Way to go!
-				</Header>
-				<Header style={{ marginTop: '30px' }} as="h4" textAlign="center">
-					<p>Let us know who should be admins in your setup, and then you're on your way.</p>
-					<br />
-					<p style={{ color: 'red' }}>{errorstate}</p>
-				</Header>
-				
+				<Segment style={{ margin: '50px' }}>
+					<Header style={{ marginTop: '30px' }} as="h2" paddngTop="3" textAlign="center">
+						Way to go!
+					</Header>
+					<Header style={{ marginTop: '30px' }} as="h4" textAlign="center">
+						<p>Let us know who should be admins in your setup, and then you're on your way.</p>
+						<br />
+						<p style={{ color: 'red' }}>{errorstate}</p>
+					</Header>
+
 					<Form>
 						<Form.Group widths="equal">
 							<Form.Field
@@ -337,10 +336,10 @@ function App() {
 		);
 	} else if (page4) {
 		return (
-		<Segment style={{margin: '50px'}}>
-<Image src="/success.png" size="large" centered />
-		</Segment>
-		)
+			<Segment style={{ margin: '50px' }}>
+				<Image src="/success.png" size="large" centered />
+			</Segment>
+		);
 	}
 }
 
